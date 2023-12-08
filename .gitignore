@@ -146,8 +146,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-flightenv/
-Model.pkl
 # pytype static type analyzer
 .pytype/
 
