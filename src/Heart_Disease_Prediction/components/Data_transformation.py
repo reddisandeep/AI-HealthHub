@@ -14,7 +14,7 @@ from sklearn.preprocessing import StandardScaler
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('Artifacts','Heart_Disease','Preprocessor.pkl')
+    preprocessor_obj_file_path=os.path.join('Artifacts','Heart_Disease','Heart_Preprocessor.pkl')
 
 
 class DataTransformation:
