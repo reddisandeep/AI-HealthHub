@@ -18,23 +18,23 @@ class DataIngestion:
         self.ingestion_config = DataIngestionConfig()
 
     def initiate_data_ingestion(self):
-        logging.info("Heart Disease Prediction: Data ingestion phase started")
+        logging.info("Breast Cancer Disease: Data ingestion phase started")
         try:
             data = pd.read_csv("Notebook_Experiments\Data\cancerb.csv")
-            logging.info("Heart Disease Prediction: Read the Data from the csv file")
+            logging.info("Breast Cancer Disease: Read the Data from the csv file")
 
             os.makedirs(os.path.dirname(os.path.join(self.ingestion_config.raw_data_path)), exist_ok=True)
             data.to_csv(self.ingestion_config.raw_data_path, index=False)
-            logging.info("Heart Disease Prediction: Created the raw data file")
+            logging.info("Breast Cancer Disease: Created the raw data file")
 
-            logging.info("Heart Disease Prediction: Splitting the data into train and test")
+            logging.info("Breast Cancer Disease: Splitting the data into train and test")
             train_data, test_data = train_test_split(data, test_size=0.2, random_state=42)
-            logging.info("Heart Disease Prediction: Data Splitting is done")
+            logging.info("Breast Cancer Disease: Data Splitting is done")
 
             train_data.to_csv(self.ingestion_config.train_data_path, index=False)
             test_data.to_csv(self.ingestion_config.test_data_path, index=False)
-            logging.info("Heart Disease Prediction: Created the train and test data files")
-            logging.info("Heart Disease Prediction: Data ingestion completed")
+            logging.info("Breast Cancer Disease: Created the train and test data files")
+            logging.info("Breast Cancer Disease: Data ingestion completed")
 
             return (self.ingestion_config.test_data_path,self.ingestion_config.train_data_path)
         
